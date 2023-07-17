@@ -1,5 +1,3 @@
-
-
 create table stud
 (
 	id number(10) primary key,
