@@ -1,0 +1,40 @@
+
+
+create table stud
+(
+	id number(10) primary key,
+	name varchar(30) not null
+);
+
+create table stud_detail
+(
+	id number(10) references stud(id),
+	city varchar(30) not null,
+	mobile number(11) not null
+);
+
+
+insert into stud
+values(1,"dhaval"),(2,"dev"),(3,"ravi"),(4,"dhruv"),(5,"himal");
+
+insert into stud_detail
+values(1,"bardoli",1597844589),(2,"dungra",7632399854),(3,"karod",6389554397),(4,"kathor",7265078963),(5,"bardoli",9987585940);
+
+1.Display all record of stud table.
+-> select * from stud;
+
+2.Display all record of stud_detail table.
+-> select * from stud_detail;
+
+3.Display record of student whose come from city "surat".
+-> select s.id , s.name from stud s , stud_detail sd
+   where s.id=sd.id and sd.city like  "surat";
+
+4.Display record of student whose come from city start from b.
+-> select s.id , s.name from stud s , stud_detail sd
+   where s.id=sd.id and sd.city like  "b%";
+
+
+
+
+
